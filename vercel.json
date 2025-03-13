@@ -21,5 +21,12 @@
         "Expires": "0"
       }
     }
+  ],
+  "redirects": [
+    {
+      "source": "https://www.dattatreya.club/:path*",
+      "destination": "https://dattatreya.club/:path*",
+      "permanent": true
+    }
   ]
 }
