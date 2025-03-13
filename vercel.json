@@ -11,20 +11,28 @@
       "use": "@vercel/next"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "headers": {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Pragma": "no-cache",
-        "Expires": "0"
-      }
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "0"
+        }
+      ]
     }
   ],
   "redirects": [
     {
-      "source": "https://www.dattatreya.club/:path*",
+      "source": "/www.dattatreya.club/:path*",
       "destination": "https://dattatreya.club/:path*",
       "permanent": true
     }
