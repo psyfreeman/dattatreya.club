@@ -8,12 +8,77 @@
   box-sizing: border-box;
 }
 
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: black;
-  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  color: rgb(var(--foreground-rgb));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Audio Player Styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #0d9488;
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  background-color: #14b8a6;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 2px solid #0d9488;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border-color: #14b8a6;
+  background-color: #0d9488;
+}
+
+/* Firefox styles */
+input[type="range"]::-moz-range-track {
+  background: #0d9488;
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  border-radius: 50%;
+  background-color: #14b8a6;
+  height: 16px;
+  width: 16px;
+  border: 2px solid #0d9488;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  border-color: #14b8a6;
+  background-color: #0d9488;
 }
